@@ -4,7 +4,11 @@ import { Provider } from "react-redux";
 import App from "./components/App";
 import configureStore from "./store/configure-store";
 
-const store = configureStore();
+const initialState = {
+  users: ["Fedya", "Olya", "Yuriy"]
+};
+
+const store = configureStore(initialState);
 
 render(
   <Provider store={store}>

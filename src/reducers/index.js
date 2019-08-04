@@ -1,4 +1,6 @@
 import { combineReducers } from "redux";
-import pokemons from "./pokemons";
+import users from "./users";
 
-export default combineReducers(pokemons);
+export default combineReducers({
+  users
+});
