@@ -7,7 +7,7 @@ const UsersList = ({ users }) => {
     <div>
       {users
         ? users.map(user => {
-            return <p key={user}>{user}</p>;
+            return <p key={user.id}>{user.name}</p>;
           })
         : ""}
     </div>

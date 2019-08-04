@@ -15,6 +15,7 @@ class InputField extends Component {
 
     if (inputValue) {
       this.props.addUser(inputValue);
+      this.input.value = "";
     }
   }
 

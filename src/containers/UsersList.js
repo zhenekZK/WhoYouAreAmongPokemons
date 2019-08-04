@@ -5,8 +5,4 @@ const mapStateToProps = state => ({
   users: state.users
 });
 
-// const mapDispatchToProps = dispatch => ({
-//     addUser: name => dispatch(addUser(name))
-// })
-
 export default connect(mapStateToProps)(List);

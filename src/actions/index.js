@@ -2,8 +2,10 @@ let userId = 10; // change later on zero
 
 export const addUser = name => ({
   type: "ADD_USER",
-  id: ++userId,
+  id: generateId(),
   name
 });
 
-function generateId() {}
+function generateId() {
+  return ++userId;
+}

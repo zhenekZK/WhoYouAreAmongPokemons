@@ -5,7 +5,20 @@ import App from "./components/App";
 import configureStore from "./store/configure-store";
 
 const initialState = {
-  users: ["Fedya", "Olya", "Yuriy"]
+  users: [
+    {
+      id: 1,
+      name: "Fedya"
+    },
+    {
+      id: 2,
+      name: "Olya"
+    },
+    {
+      id: 3,
+      name: "Yuriy"
+    }
+  ]
 };
 
 const store = configureStore(initialState);
