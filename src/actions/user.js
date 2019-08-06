@@ -1,10 +1,26 @@
-let userId = 10; // change later on zero
+export const ADD_USER = "ADD_USER";
+export const UPDATE_USER = "UPDATE_USER";
 
-export const addUser = name => ({
-  type: "ADD_USER",
-  id: generateId(),
-  name
-});
+let userId = 10; // change later on zero
+const maxPokemonId = 800;
+
+export const addUser = function(name) {
+  return function(dispatch) {
+    const id = generateId();
+
+    dispatch(createUser(name, id));
+    // generatePokemon(id)
+  };
+};
+
+function createUser(name, id) {
+  return {
+    type: ADD_USER,
+    id: id,
+    pokemonId: Math.floor(Math.random() * maxPokemonId) + 1,
+    name
+  };
+}
 
 function generateId() {
   return ++userId;

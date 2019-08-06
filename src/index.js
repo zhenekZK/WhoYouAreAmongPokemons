@@ -8,15 +8,18 @@ const initialState = {
   users: [
     {
       id: 1,
-      name: "Fedya"
+      name: "Fedya",
+      pokemonId: 234
     },
     {
       id: 2,
-      name: "Olya"
+      name: "Olya",
+      pokemonId: 524
     },
     {
       id: 3,
-      name: "Yuriy"
+      name: "Yuriy",
+      pokemonId: 128
     }
   ]
 };

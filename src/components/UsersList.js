@@ -1,13 +1,16 @@
 import React, { Component } from "react";
+import User from "./User";
 
-const UsersList = ({ users }) => {
-  console.log(users);
+const UsersList = props => {
+  console.log(props);
 
   return (
     <div>
-      {users
-        ? users.map(user => {
-            return <p key={user.id}>{user.name}</p>;
+      {props.users
+        ? props.users.map(user => {
+            return (
+              <User key={user.id} name={user.name} pokemonId={user.pokemonId} />
+            );
           })
         : ""}
     </div>
