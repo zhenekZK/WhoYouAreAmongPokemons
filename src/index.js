@@ -9,17 +9,12 @@ const initialState = {
     {
       id: 1,
       name: "Fedya",
-      pokemonId: 234
+      pokemonId: 123
     },
     {
       id: 2,
       name: "Olya",
-      pokemonId: 524
-    },
-    {
-      id: 3,
-      name: "Yuriy",
-      pokemonId: 128
+      pokemonId: 321
     }
   ]
 };

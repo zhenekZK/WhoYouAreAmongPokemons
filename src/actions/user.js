@@ -9,7 +9,6 @@ export const addUser = function(name) {
     const id = generateId();
 
     dispatch(createUser(name, id));
-    // generatePokemon(id)
   };
 };
 

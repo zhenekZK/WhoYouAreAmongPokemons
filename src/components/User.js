@@ -5,6 +5,7 @@ class User extends Component {
     super(props);
 
     this.state = {
+      userName: this.props.name,
       isUpdating: false,
       pokemonData: {}
     };
@@ -14,18 +15,18 @@ class User extends Component {
     let self = this;
     // debugger
 
-    fetch(`https://pokeapi.co/api/v2/pokemon-species/${this.props.pokemonId}`)
+    fetch(`https://pokeapi.co/api/v2/pokemon/${this.props.pokemonId}`)
       .then(response => response.json())
       .then(result => {
         const value = result;
         console.log(value);
 
-        self.setState(state => {
-          let data = state.pokemonData;
-          data.name = value.name;
-          data.color = value.color.name;
-
-          return state;
+        self.setState({
+          pokemonData: {
+            name: value.name,
+            image: value.sprites.front_default
+            // color: value.color.name
+          }
         });
       });
   }
@@ -34,7 +35,7 @@ class User extends Component {
     const { name, pokemonId } = this.props;
     console.log(this.state, "state");
     return (
-      <div>
+      <li className="user">
         <p>{name}</p>
         <p>{pokemonId}</p>
         <p>
@@ -42,7 +43,8 @@ class User extends Component {
             ? this.state.pokemonData.name
             : "Loading..."}
         </p>
-      </div>
+        <img src={this.state.pokemonData.image} alt="image" />
+      </li>
     );
   }
 }

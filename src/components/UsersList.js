@@ -5,7 +5,7 @@ const UsersList = props => {
   console.log(props);
 
   return (
-    <div>
+    <ul className="user-list">
       {props.users
         ? props.users.map(user => {
             return (
@@ -13,7 +13,7 @@ const UsersList = props => {
             );
           })
         : ""}
-    </div>
+    </ul>
   );
 };
 
