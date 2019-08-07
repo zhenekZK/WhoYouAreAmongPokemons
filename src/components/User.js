@@ -36,14 +36,15 @@ class User extends Component {
     console.log(this.state, "state");
     return (
       <li className="user">
-        <p>{name}</p>
-        <p>{pokemonId}</p>
-        <p>
-          {this.state.pokemonData.name
-            ? this.state.pokemonData.name
-            : "Loading..."}
-        </p>
-        <img src={this.state.pokemonData.image} alt="image" />
+        <div className="user-data">{name}</div>
+        <div className="pokemon-data">
+          <img src={this.state.pokemonData.image} alt="image" />
+          <p>
+            {this.state.pokemonData.name
+              ? this.state.pokemonData.name
+              : "Loading..."}
+          </p>
+        </div>
       </li>
     );
   }

@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 import App from "./components/App";
 import configureStore from "./store/configure-store";
+import "./styles/main.css";
 
 const initialState = {
   users: [
