@@ -23,6 +23,7 @@ class InputField extends Component {
     return (
       <form onSubmit={this.formSubmit}>
         <input
+          className="input-field"
           type="text"
           ref={node => (this.input = node)}
           onChange={this.inputHandler}

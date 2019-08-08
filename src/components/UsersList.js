@@ -9,7 +9,13 @@ const UsersList = props => {
       {props.users
         ? props.users.map(user => {
             return (
-              <User key={user.id} name={user.name} pokemonId={user.pokemonId} />
+              <User
+                key={user.id}
+                name={user.name}
+                id={user.id}
+                pokemonId={user.pokemonId}
+                updateUser={props.updateUser}
+              />
             );
           })
         : ""}

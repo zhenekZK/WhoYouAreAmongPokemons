@@ -15,7 +15,10 @@ export default function(state = initialState, action) {
         }
       ];
     case UPDATE_USER:
-      return state;
+      // debugger
+      return state.map(user =>
+        user.id === action.id ? { ...user, pokemonId: action.pokemonId } : user
+      );
     default:
       return state;
   }

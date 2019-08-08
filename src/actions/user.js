@@ -6,9 +6,18 @@ const maxPokemonId = 800;
 
 export const addUser = function(name) {
   return function(dispatch) {
-    const id = generateId();
+    const id = generateUserId();
 
     dispatch(createUser(name, id));
+  };
+};
+
+export const updateUser = function(id) {
+  // debugger
+  return {
+    type: UPDATE_USER,
+    id,
+    pokemonId: generatePokemonId()
   };
 };
 
@@ -16,11 +25,15 @@ function createUser(name, id) {
   return {
     type: ADD_USER,
     id: id,
-    pokemonId: Math.floor(Math.random() * maxPokemonId) + 1,
+    pokemonId: generatePokemonId(),
     name
   };
 }
 
-function generateId() {
+function generateUserId() {
   return ++userId;
+}
+
+function generatePokemonId() {
+  return Math.floor(Math.random() * maxPokemonId) + 1;
 }
