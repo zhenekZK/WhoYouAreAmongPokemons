@@ -3,7 +3,6 @@ import { ADD_USER, UPDATE_USER } from "../actions/user";
 const initialState = {};
 
 export default function(state = initialState, action) {
-  console.log(action);
   switch (action.type) {
     case ADD_USER:
       return [
@@ -15,7 +14,6 @@ export default function(state = initialState, action) {
         }
       ];
     case UPDATE_USER:
-      // debugger
       return state.map(user =>
         user.id === action.id ? { ...user, pokemonId: action.pokemonId } : user
       );
