@@ -46,9 +46,12 @@ form {
   background-color: #e2ffe454;
 }
 
-.user-container > .user-block,
+.user-container > .user-block {
+  width: 45%;
+}
+
 .user-container > .pokemon-block {
-  width: 50%;
+  width: 55%;
 }
 
 .user-block .name {
@@ -75,6 +78,14 @@ form {
 .pokemon-block > .data > .image {
   width: 100px;
   height: 100px;
+}
+
+.pokemon-block > .actions > .button {
+  margin-right: 10px;
+}
+
+.pokemon-block > .actions > .delete {
+  color: #ea5f83;
 }
 
 .button {

@@ -46,7 +46,7 @@ class User extends Component {
   }
 
   render() {
-    const { name } = this.props;
+    const { name, id, updateUser, deleteUser } = this.props;
     return (
       <li className="user-container">
         <div className="user-block">
@@ -70,11 +70,11 @@ class User extends Component {
             </p>
           </div>
           <div className="actions">
-            <button
-              className="button"
-              onClick={() => this.props.updateUser(this.props.id)}
-            >
+            <button className="button update" onClick={() => updateUser(id)}>
               Update
+            </button>
+            <button className="button delete" onClick={() => deleteUser(id)}>
+              Delete
             </button>
           </div>
         </div>

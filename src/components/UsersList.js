@@ -15,6 +15,7 @@ const UsersList = props => {
                 id={user.id}
                 pokemonId={user.pokemonId}
                 updateUser={props.updateUser}
+                deleteUser={props.deleteUser}
               />
             );
           })

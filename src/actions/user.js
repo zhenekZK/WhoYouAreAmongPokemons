@@ -1,5 +1,6 @@
 export const ADD_USER = "ADD_USER";
 export const UPDATE_USER = "UPDATE_USER";
+export const DELETE_USER = "DELETE_USER";
 
 let userId = 10; // change later on zero
 const maxPokemonId = 800;
@@ -9,6 +10,13 @@ export const addUser = function(name) {
     const id = generateUserId();
 
     dispatch(createUser(name, id));
+  };
+};
+
+export const deleteUser = function(id) {
+  return {
+    type: DELETE_USER,
+    id
   };
 };
 
