@@ -2,8 +2,6 @@ import React from "react";
 import User from "./User";
 
 const UsersList = props => {
-  console.log(props);
-
   return (
     <ul className="user-list">
       {props.users

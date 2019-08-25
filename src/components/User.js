@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import updateTitle from "../actions/title";
 
 class User extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class User extends Component {
     };
 
     this.loadPokemon = this.loadPokemon.bind(this);
+    this.updateHandle = this.updateHandle.bind(this);
   }
 
   componentDidMount() {
@@ -45,8 +47,14 @@ class User extends Component {
       });
   }
 
+  updateHandle() {
+    const { id, updateUser } = this.props;
+
+    updateUser(id);
+  }
+
   render() {
-    const { name, id, updateUser, deleteUser } = this.props;
+    const { name, id, deleteUser } = this.props;
     return (
       <li className="user-container">
         <div className="user-block">
@@ -70,7 +78,7 @@ class User extends Component {
             </p>
           </div>
           <div className="actions">
-            <button className="button update" onClick={() => updateUser(id)}>
+            <button className="button update" onClick={updateHandle}>
               Update
             </button>
             <button className="button delete" onClick={() => deleteUser(id)}>

@@ -21,7 +21,6 @@ export const deleteUser = function(id) {
 };
 
 export const updateUser = function(id) {
-  // debugger
   return {
     type: UPDATE_USER,
     id,

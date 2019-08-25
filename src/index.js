@@ -6,6 +6,10 @@ import configureStore from "./store/configure-store";
 import "./styles/main.css";
 
 const initialState = {
+  title: {
+    text: "",
+    isDefault: true
+  },
   users: [
     {
       id: 1,

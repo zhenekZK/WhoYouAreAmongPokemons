@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Title from "../components/Title";
+import Title from "../containers/Title";
 import Field from "../containers/ContainerField";
 import List from "../containers/UsersList";
 
