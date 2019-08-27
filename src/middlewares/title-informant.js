@@ -1,5 +1,4 @@
 import { ADD_USER, UPDATE_USER, DELETE_USER } from "../actions/user";
-import { updateTitle } from "../actions/title";
 
 const titleInformant = ({ dispatch }) => {
   return function(next) {
