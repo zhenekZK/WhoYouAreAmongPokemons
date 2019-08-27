@@ -24,6 +24,13 @@ export const updateUser = function(id) {
   return function(dispatch) {
     const pokId = generatePokemonId();
 
+    dispatch({
+      type: UPDATE_USER,
+      id,
+      pokemonName: "",
+      pokemonImage: ""
+    });
+
     return fetch(`https://pokeapi.co/api/v2/pokemon/${generatePokemonId()}`)
       .then(response => response.json())
       .then(result => {

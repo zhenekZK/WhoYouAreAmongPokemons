@@ -6,8 +6,7 @@ class User extends Component {
   }
 
   render() {
-    const { name, id, updateUser, deleteUser } = this.props;
-    const isUpdating = false;
+    const { name, id, image, pokemonName, updateUser, deleteUser } = this.props;
     return (
       <li className="user-container">
         <div className="user-block">
@@ -17,16 +16,14 @@ class User extends Component {
           <div className="data">
             <img
               src={
-                !isUpdating
-                  ? this.props.image
+                image
+                  ? image
                   : "https://loading.io/spinners/comets/index.comet-spinner.svg"
               }
               alt="image"
               className="image"
             />
-            <p className="name">
-              {!isUpdating ? this.props.pokemonName : "Loading..."}
-            </p>
+            <p className="name">{pokemonName ? pokemonName : "Loading..."}</p>
           </div>
           <div className="actions">
             <button className="button update" onClick={() => updateUser(id)}>
