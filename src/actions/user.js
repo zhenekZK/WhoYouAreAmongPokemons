@@ -21,10 +21,21 @@ export const deleteUser = function(id) {
 };
 
 export const updateUser = function(id) {
-  return {
-    type: UPDATE_USER,
-    id,
-    pokemonId: generatePokemonId()
+  return function(dispatch) {
+    const pokId = generatePokemonId();
+
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${generatePokemonId()}`)
+      .then(response => response.json())
+      .then(result => {
+        const value = result;
+        dispatch({
+          type: UPDATE_USER,
+          id,
+          pokemonId: pokId,
+          pokemonName: value.name,
+          pokemonImage: value.sprites.front_default
+        });
+      });
   };
 };
 

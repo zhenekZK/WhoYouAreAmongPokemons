@@ -12,6 +12,8 @@ const UsersList = props => {
                 name={user.name}
                 id={user.id}
                 pokemonId={user.pokemonId}
+                image={user.image}
+                pokemonName={user.pokemonName}
                 updateUser={props.updateUser}
                 deleteUser={props.deleteUser}
               />

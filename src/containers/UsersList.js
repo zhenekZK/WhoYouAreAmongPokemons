@@ -8,6 +8,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   updateUser: id => dispatch(updateUser(id)),
+  // userWasUpdated: (data) => dispatch(userWasUpdated(data)),
   deleteUser: id => dispatch(deleteUser(id))
 });
 

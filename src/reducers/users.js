@@ -14,8 +14,16 @@ export default function(state = initialState, action) {
         }
       ];
     case UPDATE_USER:
+      console.log(state);
       return state.map(user =>
-        user.id === action.id ? { ...user, pokemonId: action.pokemonId } : user
+        user.id === action.id
+          ? {
+              ...user,
+              pokemonId: action.pokemonId,
+              pokemonName: action.pokemonName,
+              image: action.pokemonImage
+            }
+          : user
       );
     case DELETE_USER:
       return state.filter(user => user.id !== action.id);
