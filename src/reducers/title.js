@@ -7,12 +7,14 @@ export default function(state = initialState, action) {
     case SET_DEFAULT_TITLE:
       return {
         ...state,
+        text: "",
         isDefault: true
       };
     case ADD_USER_TITLE:
       return {
         ...state,
-        userName: action.userName
+        text: action.text,
+        isDefault: false
       };
     default:
       return state;

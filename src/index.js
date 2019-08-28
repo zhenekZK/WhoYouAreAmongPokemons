@@ -8,6 +8,7 @@ import "./styles/main.css";
 const initialState = {
   title: {
     text: "",
+    defaultText: "Who you are among pokemons?",
     isDefault: true
   },
   users: [

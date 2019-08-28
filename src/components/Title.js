@@ -1,14 +1,11 @@
 import React from "react";
 
 const Title = props => {
-  const { title, userName, pokemonName } = props;
+  console.log(props, "PROPSSSSS");
+  const { text, defaultText, isDefault } = props;
   return (
     <div className="title-wrapper">
-      <p className="title">
-        {title.isDefault
-          ? "Who You Are Among Pokemons?"
-          : `Congratulations, ${userName}! you are ${pokemonName}`}
-      </p>
+      <p className="title">{isDefault ? defaultText : text}</p>
     </div>
   );
 };
