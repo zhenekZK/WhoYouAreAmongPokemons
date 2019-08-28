@@ -16,14 +16,16 @@ const initialState = {
       name: "Fedya",
       pokemonId: 123,
       pokemonName: "lalal",
-      image: "lalala"
+      image: "lalala",
+      isLoading: true
     },
     {
       id: 2,
       name: "Olya",
       pokemonId: 321,
       pokemonName: "ffffff",
-      image: "fffff"
+      image: "fffff",
+      isLoading: true
     }
   ]
 };

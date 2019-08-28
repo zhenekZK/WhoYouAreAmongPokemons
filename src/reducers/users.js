@@ -1,8 +1,14 @@
-import { ADD_USER, UPDATE_USER, DELETE_USER } from "../actions/user";
+import {
+  ADD_USER,
+  SUCCESS_USER_UPDATE,
+  DELETE_USER,
+  START_USER_UPDATE
+} from "../actions/user";
 
 const initialState = {};
 
 export default function(state = initialState, action) {
+  // console.log(state);
   switch (action.type) {
     case ADD_USER:
       return [
@@ -13,15 +19,24 @@ export default function(state = initialState, action) {
           pokemonId: action.pokemonId
         }
       ];
-    case UPDATE_USER:
-      console.log(state);
+    case START_USER_UPDATE:
+      return state.map(user =>
+        user.id === action.id
+          ? {
+              ...user,
+              isLoading: true
+            }
+          : user
+      );
+    case SUCCESS_USER_UPDATE:
       return state.map(user =>
         user.id === action.id
           ? {
               ...user,
               pokemonId: action.pokemonId,
               pokemonName: action.pokemonName,
-              image: action.pokemonImage
+              image: action.pokemonImage,
+              isLoading: false
             }
           : user
       );

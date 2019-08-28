@@ -4,7 +4,6 @@ const Title = props => {
   const { title, userName, pokemonName } = props;
   return (
     <div className="title-wrapper">
-      {console.log(title.isDefault)}
       <p className="title">
         {title.isDefault
           ? "Who You Are Among Pokemons?"

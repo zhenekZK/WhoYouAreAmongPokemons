@@ -1,5 +1,6 @@
 export const ADD_USER = "ADD_USER";
-export const UPDATE_USER = "UPDATE_USER";
+export const START_USER_UPDATE = "START_USER_UPDATE";
+export const SUCCESS_USER_UPDATE = "SUCCESS_USER_UPDATE";
 export const DELETE_USER = "DELETE_USER";
 
 let userId = 10; // change later on zero
@@ -21,23 +22,25 @@ export const deleteUser = function(id) {
 };
 
 export const updateUser = function(id) {
-  return function(dispatch) {
+  return function(dispatch, getState) {
     const pokId = generatePokemonId();
 
+    const name = getUserNameById(id, getState().users);
+
     dispatch({
-      type: UPDATE_USER,
+      type: START_USER_UPDATE,
       id,
-      pokemonName: "",
-      pokemonImage: ""
+      isLoading: true
     });
 
-    return fetch(`https://pokeapi.co/api/v2/pokemon/${generatePokemonId()}`)
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${pokId}`)
       .then(response => response.json())
       .then(result => {
         const value = result;
         dispatch({
-          type: UPDATE_USER,
+          type: SUCCESS_USER_UPDATE,
           id,
+          name,
           pokemonId: pokId,
           pokemonName: value.name,
           pokemonImage: value.sprites.front_default
@@ -45,6 +48,19 @@ export const updateUser = function(id) {
       });
   };
 };
+
+function getUserNameById(id, users) {
+  let name = "";
+
+  for (let user of users) {
+    if (user.id == id) {
+      name = user.name;
+      break;
+    }
+  }
+
+  return name;
+}
 
 function createUser(name, id) {
   return {
