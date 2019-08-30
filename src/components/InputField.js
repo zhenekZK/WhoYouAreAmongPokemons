@@ -26,7 +26,6 @@ class InputField extends Component {
           className="input-field"
           type="text"
           ref={node => (this.input = node)}
-          onChange={this.inputHandler}
           placeholder="Enter your name"
           autoFocus
         />

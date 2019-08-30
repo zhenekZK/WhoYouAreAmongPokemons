@@ -25,7 +25,7 @@ export const updateUser = function(id) {
   return function(dispatch, getState) {
     const pokId = generatePokemonId();
 
-    const name = getUserNameById(id, getState().users);
+    // const name = getUserNameById(id, getState().users);
 
     dispatch({
       type: START_USER_UPDATE,
@@ -33,34 +33,33 @@ export const updateUser = function(id) {
       isLoading: true
     });
 
-    return fetch(`https://pokeapi.co/api/v2/pokemon/${pokId}`)
-      .then(response => response.json())
-      .then(result => {
-        const value = result;
+    // return fetch(`https://pokeapi.co/api/v2/pokemon/${pokId}`)
+    //   .then(response => response.json())
+    //   .then(result => {
+    //     const value = result;
+    //     dispatch({
+    //       type: SUCCESS_USER_UPDATE,
+    //       id,
+    //       name,
+    //       pokemonId: pokId,
+    //       pokemonName: value.name,
+    //       pokemonImage: value.sprites.front_default
+    //     });
+    //   });
+
+    setTimeout(
+      () =>
         dispatch({
           type: SUCCESS_USER_UPDATE,
           id,
-          name,
           pokemonId: pokId,
-          pokemonName: value.name,
-          pokemonImage: value.sprites.front_default
-        });
-      });
+          pokemonName: "chupa" + generatePokemonId(),
+          pokemonImage: "http://images.com/1"
+        }),
+      1500
+    );
   };
 };
-
-function getUserNameById(id, users) {
-  let name = "";
-
-  for (let user of users) {
-    if (user.id == id) {
-      name = user.name;
-      break;
-    }
-  }
-
-  return name;
-}
 
 function createUser(name, id) {
   return {

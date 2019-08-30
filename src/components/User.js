@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 class User extends Component {
   componentDidMount() {
+    // this.props.updateUser(this.props.id);
     this.props.updateUser(this.props.id);
   }
 
